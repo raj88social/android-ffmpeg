@@ -34,39 +34,34 @@ $DEBUG_FLAG \
 --enable-static \
 --cross-prefix=$NDK_TOOLCHAIN_BASE/bin/$NDK_ABI-linux-androideabi- \
 --sysroot="$NDK_SYSROOT" \
---extra-cflags="-I../x264 -mfloat-abi=softfp -mfpu=neon" \
---extra-ldflags="-L../x264" \
-\
---enable-version3 \
---enable-gpl \
-\
+--extra-cflags="-mfloat-abi=softfp -mfpu=neon" \
 --disable-doc \
 --enable-yasm \
-\
---enable-decoders \
---enable-encoders \
---enable-muxers \
---enable-demuxers \
---enable-parsers \
---enable-protocols \
---enable-filters \
---enable-avresample \
---enable-libfreetype \
-\
+--disable-decoders \
+--enable-decoder=pcm_s16le \
+--disable-encoders \
+--enable-encoder=aac \
+--disable-muxers \
+--enable-muxer=mp4 \
+--disable-demuxers \
+--enable-demuxer=wav \
+--disable-parsers \
+--disable-protocols \
+--enable-protocol=file \
+--disable-filters \
+--enable-filter=aresample \
+--disable-libfreetype \
 --disable-indevs \
---enable-indev=lavfi \
+--disable-indev=lavfi \
 --disable-outdevs \
-\
 --enable-hwaccels \
-\
 --enable-ffmpeg \
 --disable-ffplay \
 --disable-ffprobe \
 --disable-ffserver \
 --disable-network \
-\
---enable-libx264 \
---enable-zlib
+--disable-bsfs \
+--enable-small
 
 popd; popd
 
