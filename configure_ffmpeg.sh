@@ -25,7 +25,6 @@ pushd ffmpeg
 ./configure \
 $DEBUG_FLAG \
 --arch=arm \
---cpu=cortex-a8 \
 --target-os=linux \
 --enable-runtime-cpudetect \
 --prefix=$prefix \
@@ -34,7 +33,7 @@ $DEBUG_FLAG \
 --enable-static \
 --cross-prefix=$NDK_TOOLCHAIN_BASE/bin/$NDK_ABI-linux-androideabi- \
 --sysroot="$NDK_SYSROOT" \
---extra-cflags="-mfloat-abi=softfp -mfpu=neon" \
+--extra-cflags="-mfloat-abi=soft" \
 --disable-doc \
 --enable-yasm \
 --disable-decoders \
